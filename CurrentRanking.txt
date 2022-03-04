@@ -1,0 +1,1 @@
+{'Mauro': 1116.0, 'David': 1148.0, 'Martin': 1038.0, 'Thierry': 974.0, 'Mekha': 819.0, 'Romain': 937.0, 'Constant': 1014.0, 'Lucie': 973.0, 'Hugo': 981.0}
