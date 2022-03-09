@@ -7,7 +7,6 @@
 # GUI TO UPDATE CURRENT RANKING
 
 ############## IMPORT ################
-import math
 import ast
 import tkinter as tk
 import tkinter.ttk as ttk
@@ -16,8 +15,11 @@ from shutil import copyfile
 from datetime import datetime
 import winsound
 from PIL import Image, ImageTk
-from tkinter import messagebox
+from tkinter import HORIZONTAL, Variable, messagebox
 import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from idlelib.tooltip import Hovertip
 
 ######################################
 
@@ -50,57 +52,40 @@ def sound3():
 
 # Function to calculate the Probability 
 def Probability(rating1, rating2):
-    return 1.0 * 1.0 / (1 + 1.0 * math.pow(10, 1.0 * (rating1 - rating2) / 400))
+    return 1. / (1. + (10**( (rating1 - rating2) / 400) ))
 
-
+def GetScaling(formula,point_diff,ranking_diff):
+    if formula:
+        K = 40
+        kdiff = point_diff / 9 + 0.25
+    else:
+        K = 50
+        alpha = 1.5
+        kdiff = np.log( 1. + point_diff ) * (alpha / (alpha - ranking_diff / 1000))
+    return K*kdiff
 # Function to calculate Elo rating 
-def EloRating(R1, R2, pt1, pt2):
-    K = 40
-    kdiff = abs(pt1 - pt2) / 9 + 0.25
-
+def EloRating(R1, R2, pt1, pt2, formula = 0):    
+    #Get scaling (rate of change as a function of elo and point difference)
+    scaling_coeff = GetScaling(formula,abs(pt1-pt2),R2-R1)        
     # Calculate the Winning Probability of Players 1 and 2
-    P1 = Probability(R2, R1)
-    P2 = 1 - P1
-
-    # Case -1 Player A wins 
-    if (pt1 > pt2):
-        R1 = R1 + K * (1 - P1) * kdiff
-        R2 = R2 + K * (0 - P2) * kdiff
-
-    # Case -2 Player B wins 
-    if (pt1 < pt2):
-        R1 = R1 + K * (0 - P1) * kdiff
-        R2 = R2 + K * (1 - P2) * kdiff
-
-    return [round(R1, 0), round(R2, 0)]
-
-
-# Function to calculate Elo rating
-def EloRating2(R1, R2, pt1, pt2):  # trying new formula
-    K = 50
-    alpha = 1.5
-
-    # Calculate the Winning Probability of Players 1 and 2
-    P1 = Probability(R2, R1)
-    P2 = 1 - P1
-
-    # Case -1 Player A wins
-    if (pt1 > pt2):
-        kdiff = np.log(abs(pt1 - pt2) + 1) * (alpha / (alpha - (R2 - R1) / 1000))
-        R1 = R1 + K * (1 - P1) * kdiff
-        R2 = R2 + K * (0 - P2) * kdiff
-
-    # Case -2 Player B wins
-    if (pt1 < pt2):
-        kdiff = np.log(abs(pt1 - pt2) + 1) * (alpha / (alpha + (R2 - R1) / 1000))
-        R1 = R1 + K * (0 - P1) * kdiff
-        R2 = R2 + K * (1 - P2) * kdiff
-
-    return [round(R1, 0), round(R2, 0)]
+    P1 = Probability(R2, R1) #Probability for player 2 to win versus player 1        
+    #If player 1 wins ==) int(pt1>pt2) = 1 ==) (int(pt1>pt2) - P1) = P2
+    #If player 2 wins ==) int(pt1>pt2) = 0 ==) (int(pt1>pt2) - P1) = -P1
+    elo_modification = round(scaling_coeff * (int(pt1>pt2) - P1), 0) #Change in elo for both players      
+    #Update ranking
+    return elo_modification
 
 
 ################################################
-
+def updateWhiteboard(window,sortedAttopong):
+    whiteboard = ' '.join([str(elem) for elem in sortedAttopong])
+    whiteboard = whiteboard.replace(") (", "\n")
+    whiteboard = whiteboard.replace("'", "")
+    whiteboard = whiteboard.replace(",", "   ")
+    whiteboard = whiteboard.replace("(", "  ")
+    whiteboard = whiteboard.replace(")", "")
+    lbl_Attopong = tk.Label(window, text=whiteboard)
+    lbl_Attopong.grid(column=0, row=1, columnspan=4)
 ###### READ RANKING FILE & MAKE COPY ############
 file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
 datafile = file.read().splitlines()
@@ -109,8 +94,6 @@ if 'Time' in Attopong:
     del Attopong['Time']  # Remove timestamp
 file.close()
 
-now = datetime.now()
-copyfile("CurrentRanking.txt", "Ranking_" + now.strftime("%d%b%Y-%Hh%M") + ".txt")
 #################################################
 
 ############### GUI #############################
@@ -121,38 +104,48 @@ window = tk.Tk()
 
 window.title("ATTOPONG RANKING")
 
-window.geometry('355x480')
+window.geometry('355x520')
 
+
+n = 2
+#DATE
+lbl_date = tk.Label(window, text='Match Date')
+lbl_date.grid(column=0, row=n)
+entry_text=tk.StringVar()
+entry_date = tk.Entry(window, width=10,textvariable= entry_text)  # Score player one
+entry_date.grid(column=1, row=n, columnspan=2)
+entry_text.set(datetime.now().strftime("%Y%m%d"))
+myTip = Hovertip(entry_date,'Format is YearMonthDate (20220309)')
+
+n+=1
+#PLAYER
 lbl_player = tk.Label(window, text='Player')
-lbl_player.grid(column=0, row=2)
+lbl_player.grid(column=0, row=n)
 
 comboP1 = ttk.Combobox(window, width=8)  # Select player one
 comboP1['values'] = listPlayers
-comboP1.grid(column=1, row=2)
+comboP1.grid(column=1, row=n)
 
 comboP2 = ttk.Combobox(window, width=8)  # Select player two
 comboP2['values'] = listPlayers
-comboP2.grid(column=2, row=2)
+comboP2.grid(column=2, row=n)
 
+n+=1
+#SCORE
 lbl_score = tk.Label(window, text='Match score')
-lbl_score.grid(column=0, row=3)
+lbl_score.grid(column=0, row=n)
 
 entryR1 = tk.Entry(window, width=6)  # Score player one
-entryR1.grid(column=1, row=3)
+entryR1.grid(column=1, row=n)
 entryR1.focus()
 
 entryR2 = tk.Entry(window, width=6)  # Score player two
-entryR2.grid(column=2, row=3)
+entryR2.grid(column=2, row=n)
 
 sortedAttopong = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
-whiteboard = ' '.join([str(elem) for elem in sortedAttopong])
-whiteboard = whiteboard.replace(") (", "\n")
-whiteboard = whiteboard.replace("'", "")
-whiteboard = whiteboard.replace(",", "  ")
-whiteboard = whiteboard.replace("(", "\n  ")
-whiteboard = whiteboard.replace(")", "\n")
-lbl_Attopong = tk.Label(window, text=whiteboard)  # Display the whiteboard
-lbl_Attopong.grid(column=0, row=1, columnspan=4)
+# Update whiteboard display
+updateWhiteboard(window,sortedAttopong)
+
 
 
 def update_ranking():
@@ -161,28 +154,26 @@ def update_ranking():
     P1 = [comboP1.get(), int(entryR1.get())]
     P2 = [comboP2.get(), int(entryR2.get())]
     if P1[0] != P2[0]:
-        # Old Formula
-        score = EloRating(Attopong[P1[0]], Attopong[P2[0]], P1[1], P2[1])
-        gain0 = score[0] - Attopong[P1[0]]
-        gain1 = score[1] - Attopong[P2[0]]
-
-        # Testing a new formula
-        score_newformula = EloRating2(Attopong[P1[0]], Attopong[P2[0]], P1[1], P2[1])
-        gain0_newformula = score_newformula[0] - Attopong[P1[0]]
-        gain1_newformula = score_newformula[1] - Attopong[P2[0]]
-
+        #Find change in elo
+        elo_modification = EloRating(Attopong[P1[0]], Attopong[P2[0]], P1[1], P2[1],formula = 0) #Index of formula now picks the elocoeff chosen
+        # Update ranking
+        Attopong[P1[0]] +=  elo_modification
+        Attopong[P2[0]] -=  elo_modification
         # Time stamp to add to the save file
-        timestamp = {'Time': datetime.now().strftime("%d%b%Y-%Hh%Mm%Ss")}
+        try:
+            match_date = datetime.strptime(str(entry_date.get()), "%Y%m%d").strftime("%d/%m/%Y") #Get date
+        except:           
+            match_date = datetime.now().strftime("%d/%m/%Y") #Get current date if error
 
-        # Save new formula result in some file
-        Attopong[P1[0]] = score_newformula[0]
-        Attopong[P2[0]] = score_newformula[1]
-        with open('CurrentRanking_NewFormula.txt', 'a') as f:
-            f.write(str({**timestamp, **Attopong}) + '\n')
-
-        # Save old formula result in another file
-        Attopong[P1[0]] = score[0]
-        Attopong[P2[0]] = score[1]
+        timestamp = {'Time': match_date}
+        #File that keeps track of all matches
+        df =pd.DataFrame({'Date': [ match_date],
+                        'Player1': [P1[0]],
+                        'Player2': [P2[0]],
+                        'Score1': [P1[1]],
+                        'Score2': [P2[1]]})
+        df.to_csv('ScoreSheet\\2022.txt', mode='a', index=False,header=not os.path.exists('ScoreSheet\\2022.txt'),sep='\t')
+        #Update results
         with open('CurrentRanking.txt', 'a') as f:
             f.write(str({**timestamp, **Attopong}) + '\n')
 
@@ -191,35 +182,23 @@ def update_ranking():
         for i in range(len(listPlayers)):
             if (sortedAttopong[i][0]) != (sortedAttopong_old[i][0]):
                 makesound += 1
-
         if makesound == 0:
             sound1()
         else:
             sound2()
 
         # Update whiteboard display
-        whiteboard = ' '.join([str(elem) for elem in sortedAttopong])
-        whiteboard = whiteboard.replace(") (", "\n")
-        whiteboard = whiteboard.replace("'", "")
-        whiteboard = whiteboard.replace(",", "   ")
-        whiteboard = whiteboard.replace("(", "  ")
-        whiteboard = whiteboard.replace(")", "")
-        lbl_Attopong = tk.Label(window, text=whiteboard)
-        lbl_Attopong.grid(column=0, row=1, columnspan=4)
+        updateWhiteboard(window,sortedAttopong)
 
         # Pop up window showing evolution
-        if gain0 > 0:
+        if elo_modification > 0:
             messagebox.showinfo('Rankings Updated!',
-                                'With current formula: ' + P1[0] + ' took ' + str(gain0) + ' points from ' + P2[
-                                    0] + '!' + '\n' +
-                                'With testing formula: ' + P1[0] + ' took ' + str(gain0_newformula) + ' points and ' +
-                                P2[0] + '!')
+                                P1[0] + ' took ' + str(elo_modification) + ' points from ' + P2[
+                                    0] + '!')
         else:
             messagebox.showinfo('Rankings Updated!',
-                                'With current formula: ' + P2[0] + ' took ' + str(gain1) + ' points from ' + P1[
-                                    0] + '!' + '\n' +
-                                'With testing formula: ' + P2[0] + ' took ' + str(gain1_newformula) + ' points from ' +
-                                P1[0] + '!')
+                                P2[0] + ' took ' + str(abs(elo_modification)) + ' points from ' + P1[
+                                    0] + '!' )
 
 
 btn = tk.Button(window, text="Update", command=update_ranking)
@@ -245,33 +224,53 @@ def plot_history():
     plt.legend()
     plt.show()
 
-btn = tk.Button(window, text="Plot history", command=plot_history)
-btn.grid(column=1, row=0, columnspan=3)
 
 def reloadlast_ranking():
-    sound3()
-    copyfile("Ranking_" + now.strftime("%d%b%Y-%Hh%M") + ".txt", "CurrentRanking.txt")
-
-    file_old = open("Ranking_" + now.strftime("%d%b%Y-%Hh%M") + ".txt", "r")
-    datafile = file.read().splitlines()
-    Attopong = ast.literal_eval(datafile[-1])  # Take last line (latest) for display
+    sound3()    
+    file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    datafile = file.read().splitlines() #Extract each line from file
+    Attopong = ast.literal_eval(datafile[-2])  # Take second last line (latest) for display
+    file.close()
+    with open('CurrentRanking.txt', 'w') as f:
+        print("\n".join(datafile[:-1]), file=f) #Rewrite file without last entry
     if 'Time' in Attopong:
         del Attopong['Time']  # Remove timestamp
     file.close()
-
     sortedAttopong = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
-    whiteboard = ' '.join([str(elem) for elem in sortedAttopong])
-    whiteboard = whiteboard.replace(") (", "\n")
-    whiteboard = whiteboard.replace("'", "")
-    whiteboard = whiteboard.replace(",", "   ")
-    whiteboard = whiteboard.replace("(", "  ")
-    whiteboard = whiteboard.replace(")", "")
-    lbl_Attopong = tk.Label(window, text=whiteboard)
-    lbl_Attopong.grid(column=0, row=1, columnspan=4)
+    # Update whiteboard display
+    updateWhiteboard(window,sortedAttopong)
 
+def reset_ranking():
+    file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    datafile = file.read().splitlines() #Extract each line from file
+    file.close()
+    Attopong = ast.literal_eval(datafile[0])  # Take first line (latest) for start date    
+    try:
+        start_date = datetime.strptime(Attopong['Time'],"%d/%m/%Y")
+    except:
+        start_date = datetime.strptime(Attopong['Time'],"%d%b%Y-%Hh%Mm%Ss")        
+    reset_date = datetime.now()
+    file_copy = os.path.join(f'ScoreSheet', "Ranking_" + start_date.strftime("%d%m%Y") + '-' + reset_date.strftime("%d%m%Y") + ".txt")
+    copyfile("CurrentRanking.txt",file_copy)
+    listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo')
+    dic_time = dict.fromkeys(('Time',), reset_date.strftime('%d/%m/%Y'))
+    dic_player = dict.fromkeys(listPlayers, 1000)
+    dic_tot = {**dic_time, **dic_player}
+    with open('CurrentRanking.txt', 'w') as f:
+        print(dic_tot, file=f) #Rewrite file without last entry
+    sortedAttopong = sorted(dic_player.items(), key=lambda x: x[1], reverse=True)
+    # Update whiteboard display
+    updateWhiteboard(window,sortedAttopong)
+            
+
+btn = tk.Button(window, text="Reset ranking", command=reset_ranking)
+btn.grid(column=2, row=0, columnspan=2)
+
+btn = tk.Button(window, text="Plot history", command=plot_history)
+btn.grid(column=1, row=0, columnspan=2)
 
 btnreload = tk.Button(window, text="Reload", command=reloadlast_ranking)
-btnreload.grid(column=0, row=0, columnspan=3)
+btnreload.grid(column=0, row=0, columnspan=2)
 
 image = Image.open("Attopong4.png")
 photo = ImageTk.PhotoImage(image)
