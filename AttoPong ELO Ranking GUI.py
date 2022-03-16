@@ -215,6 +215,8 @@ def plot_history():
     plt.figure(num='Attopong Ranking History')
 
     # This assumes that all players are in every line
+    with open("CurrentRanking.txt", "r") as f: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+        datafile = f.read().splitlines() #Extract each line from file            
     timestamps = []
     ranking_history = {}
     data_dict = [ast.literal_eval(l) for l in datafile]
@@ -234,15 +236,14 @@ def plot_history():
 
 def reloadlast_ranking():
     sound3()    
-    with open("ScoreSheet\\2022.txt", "r") as f: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    with open("ScoreSheet\\2022.txt", "r") as f: # Open Scoresheet (read)
         datafile = f.read().splitlines() #Extract each line from file        
-    with open("ScoreSheet\\2022.txt", "w") as f: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    with open("ScoreSheet\\2022.txt", "w") as f: # Open Scoresheet (write)
         print("\n".join(datafile[:-1]), file=f) #Rewrite file without last entry
-    # file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
-    with open("CurrentRanking.txt", "r") as f:
+    with open("CurrentRanking.txt", "r") as f: # Open CurrentRanking (read)
         datafile = f.read().splitlines() #Extract each line from file
         Attopong = ast.literal_eval(datafile[-2])  # Take second last line (latest) for display
-    with open('CurrentRanking.txt', 'w') as f:
+    with open('CurrentRanking.txt', 'w') as f: # Open CurrentRanking (write)
         print("\n".join(datafile[:-1]), file=f) #Rewrite file without last entry
     if 'Time' in Attopong:
         del Attopong['Time']  # Remove timestamp
