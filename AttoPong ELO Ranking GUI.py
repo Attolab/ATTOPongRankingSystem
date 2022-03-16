@@ -149,6 +149,13 @@ updateWhiteboard(window,sortedAttopong)
 
 
 def update_ranking():
+    ###### READ RANKING FILE & MAKE COPY ############
+    file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    datafile = file.read().splitlines()
+    Attopong = ast.literal_eval(datafile[-1])  # Take last line (latest) for display
+    if 'Time' in Attopong:
+        del Attopong['Time']  # Remove timestamp
+    file.close()    
     makesound = 0
     sortedAttopong_old = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
     P1 = [comboP1.get(), int(entryR1.get())]
@@ -227,23 +234,25 @@ def plot_history():
 
 def reloadlast_ranking():
     sound3()    
-    file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
-    datafile = file.read().splitlines() #Extract each line from file
-    Attopong = ast.literal_eval(datafile[-2])  # Take second last line (latest) for display
-    file.close()
+    with open("ScoreSheet\\2022.txt", "r") as f: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+        datafile = f.read().splitlines() #Extract each line from file        
+    with open("ScoreSheet\\2022.txt", "w") as f: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+        print("\n".join(datafile[:-1]), file=f) #Rewrite file without last entry
+    # file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+    with open("CurrentRanking.txt", "r") as f:
+        datafile = f.read().splitlines() #Extract each line from file
+        Attopong = ast.literal_eval(datafile[-2])  # Take second last line (latest) for display
     with open('CurrentRanking.txt', 'w') as f:
         print("\n".join(datafile[:-1]), file=f) #Rewrite file without last entry
     if 'Time' in Attopong:
         del Attopong['Time']  # Remove timestamp
-    file.close()
     sortedAttopong = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
     # Update whiteboard display
     updateWhiteboard(window,sortedAttopong)
 
-def reset_ranking():
-    file = open("CurrentRanking.txt", "r")  # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
-    datafile = file.read().splitlines() #Extract each line from file
-    file.close()
+def reset_ranking():    
+    with open("CurrentRanking.txt", "r") as file: # It should be a file with written: {'Mauro': 1000.0, 'David': 1000.0, ... }
+        datafile = file.read().splitlines() #Extract each line from file
     Attopong = ast.literal_eval(datafile[0])  # Take first line (latest) for start date    
     try:
         start_date = datetime.strptime(Attopong['Time'],"%d/%m/%Y")
