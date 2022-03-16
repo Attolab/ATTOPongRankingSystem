@@ -41,3 +41,10 @@ Date	Player1	Player2	Score1	Score2
 09/03/2022	David	Martin	11	5
 08/03/2022	Mauro	Romain	11	5
 09/03/2022	Martin	David	11	5
+16/03/2022	Martin	Romain	11	5
+10/03/2022	David	Romain	11	5
+11/03/2022	David	Romain	11	9
+12/03/2022	Constant	Romain	4	11
+14/03/2022	David	Romain	11	9
+14/03/2022	Mauro	Martin	13	11
+16/03/2022	David	Constant	11	9
