@@ -1,11 +1,27 @@
-{'Time': '16/03/2022', 'David': 1000, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 1000, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '10/03/2022', 'David': 1049.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 951.0, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '11/03/2022', 'David': 1068.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 932.0, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '12/03/2022', 'David': 1068.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 991.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '14/03/2022', 'David': 1088.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '14/03/2022', 'David': 1088.0, 'Martin': 973.0, 'Mauro': 1027.0, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '16/03/2022', 'David': 1103.0, 'Martin': 973.0, 'Mauro': 1027.0, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '16/03/2022', 'David': 1103.0, 'Martin': 973.0, 'Mauro': 996.0, 'Mekha': 1000, 'Romain': 1002.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '17/03/2022', 'David': 1065.0, 'Martin': 973.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1002.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '17/03/2022', 'David': 1065.0, 'Martin': 948.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1027.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000}
-{'Time': '17/03/2022', 'David': 1089.0, 'Martin': 948.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1003.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000}
+{'Time': '16/03/2022', 'David': 1000, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 1000, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '10/03/2022', 'David': 1049.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 951.0, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '11/03/2022', 'David': 1068.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 932.0, 'Thierry': 1000, 'Constant': 1000, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '12/03/2022', 'David': 1068.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 991.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '14/03/2022', 'David': 1088.0, 'Martin': 1000, 'Mauro': 1000, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '14/03/2022', 'David': 1088.0, 'Martin': 973.0, 'Mauro': 1027.0, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 941.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '16/03/2022', 'David': 1103.0, 'Martin': 973.0, 'Mauro': 1027.0, 'Mekha': 1000, 'Romain': 971.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '16/03/2022', 'David': 1103.0, 'Martin': 973.0, 'Mauro': 996.0, 'Mekha': 1000, 'Romain': 1002.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '17/03/2022', 'David': 1065.0, 'Martin': 973.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1002.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '17/03/2022', 'David': 1065.0, 'Martin': 948.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1027.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '17/03/2022', 'David': 1089.0, 'Martin': 948.0, 'Mauro': 1034.0, 'Mekha': 1000, 'Romain': 1003.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1119.0, 'Martin': 948.0, 'Mauro': 1004.0, 'Mekha': 1000, 'Romain': 1003.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1119.0, 'Martin': 948.0, 'Mauro': 1061.0, 'Mekha': 1000, 'Romain': 946.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1119.0, 'Martin': 913.0, 'Mauro': 1061.0, 'Mekha': 1000, 'Romain': 981.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1161.0, 'Martin': 913.0, 'Mauro': 1019.0, 'Mekha': 1000, 'Romain': 981.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1161.0, 'Martin': 913.0, 'Mauro': 1070.0, 'Mekha': 949.0, 'Romain': 981.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1189.0, 'Martin': 913.0, 'Mauro': 1042.0, 'Mekha': 949.0, 'Romain': 981.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1189.0, 'Martin': 947.0, 'Mauro': 1042.0, 'Mekha': 949.0, 'Romain': 947.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1221.0, 'Martin': 947.0, 'Mauro': 1010.0, 'Mekha': 949.0, 'Romain': 947.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1165.0, 'Martin': 1003.0, 'Mauro': 1010.0, 'Mekha': 949.0, 'Romain': 947.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1165.0, 'Martin': 1033.0, 'Mauro': 1010.0, 'Mekha': 919.0, 'Romain': 947.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1165.0, 'Martin': 1033.0, 'Mauro': 1010.0, 'Mekha': 868.0, 'Romain': 998.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '28/03/2022', 'David': 1179.0, 'Martin': 1033.0, 'Mauro': 996.0, 'Mekha': 868.0, 'Romain': 998.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000}
+{'Time': '29/03/2022', 'David': 1104.0, 'Martin': 1033.0, 'Mauro': 996.0, 'Mekha': 868.0, 'Romain': 1073.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1000, 'Matthieu': 1000}
+{'Time': '30/03/2022', 'David': 1104.0, 'Martin': 1004.0, 'Mauro': 996.0, 'Mekha': 868.0, 'Romain': 1073.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1029.0}
+{'Time': '30/03/2022', 'David': 1104.0, 'Martin': 1004.0, 'Mauro': 1031.0, 'Mekha': 868.0, 'Romain': 1038.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1029.0}
+{'Time': '30/03/2022', 'David': 1125.0, 'Martin': 1004.0, 'Mauro': 1031.0, 'Mekha': 868.0, 'Romain': 1017.0, 'Thierry': 1000, 'Constant': 926.0, 'Lucie': 1000, 'Hugo': 1000, 'Matthieu': 1029.0}

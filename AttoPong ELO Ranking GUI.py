@@ -98,7 +98,7 @@ file.close()
 
 ############### GUI #############################
 
-listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo')
+listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu')
 
 window = tk.Tk()
 
