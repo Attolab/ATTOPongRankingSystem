@@ -112,3 +112,17 @@ Date	Player1	Player2	Score1	Score2
 11/05/2022	Mauro	Martin	11	9
 11/05/2022	Mauro	Thierry	12	10
 11/05/2022	Mauro	Romain	12	10
+15/05/2022	David	Romain	11	4
+15/05/2022	Romain	Mauro	11	4
+15/05/2022	David	Mauro	11	9
+15/05/2022	Romain	Mekha	11	9
+15/05/2022	David	Romain	20	18
+22/05/2022	David	Mauro	11	6
+22/05/2022	Matthieu	Mauro	11	9
+22/05/2022	David	Romain	11	9
+25/05/2022	Mauro	Romain	7	11
+25/05/2022	Martin	Constant	11	9
+25/05/2022	Mekha	Mauro	6	11
+25/05/2022	Mekha	Martin	5	11
+25/05/2022	Romain	Matthieu	11	7
+25/05/2022	Romain	Mekha	11	6
