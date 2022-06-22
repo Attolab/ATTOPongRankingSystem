@@ -13,41 +13,68 @@ import tkinter.ttk as ttk
 import numpy as np
 from shutil import copyfile
 from datetime import datetime
-import winsound
 from PIL import Image, ImageTk
 from tkinter import HORIZONTAL, Variable, messagebox
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
 from idlelib.tooltip import Hovertip
-
+from sys import platform
+try:
+    import winsound
+except:
+    print('Not a window computer')
 ######################################
 
 ########## DEFINE FUNCTIONS ##########
 
 # Functions to make sounds
+def makeSound(platform,freq,duration):
+    if np.logical_or(platform == 'win64',platform == 'win32'):
+        winsound.Beep(freq, duration)
+    elif platform == 'linux':
+        os.system('beep -f %s -l %s' % (freq,duration))
+# Functions to make sounds
 def sound1():
     freq = 420
-    winsound.Beep(freq, 300)
-    winsound.Beep(freq, 150)
-    winsound.Beep(freq, 150)
-    winsound.Beep(int(freq * (2) ** (12 / 12)), 900)
-
+    makeSound(platform,freq,300)
+    makeSound(platform,freq,150)
+    makeSound(platform,freq,150)
+    makeSound(platform,int(freq * (2) ** (12 / 12)), 900)
 
 def sound2():
     freq = 420
-    winsound.Beep(freq, 400)
-    winsound.Beep(int(freq * (2) ** (4 / 12)), 150)
-    winsound.Beep(int(freq * (2) ** (7 / 12)), 150)
-    winsound.Beep(int(freq * (2) ** (12 / 12)), 450)
-    winsound.Beep(int(freq * (2) ** (11 / 12)), 150)
-    winsound.Beep(int(freq * (2) ** (12 / 12)), 900)
-
+    makeSound(platform,freq,400)
+    makeSound(platform,int(freq * (2) ** (4 / 12)), 150)
+    makeSound(platform,int(freq * (2) ** (7 / 12)), 150)
+    makeSound(platform,int(freq * (2) ** (12 / 12)), 450)
+    makeSound(platform,int(freq * (2) ** (11 / 12)), 150)
+    makeSound(platform,int(freq * (2) ** (12 / 12)), 900)
 
 def sound3():
     freq = 420
-    winsound.Beep(freq, 500)
-    winsound.Beep(int(freq / (2) ** (5 / 12)), 600)
+    makeSound(platform,freq, 500)
+    makeSound(platform,int(freq / (2) ** (5 / 12)), 600)
+
+    # def sound1():
+    #     freq = 420
+    #     winsound.Beep(freq, 300)
+    #     winsound.Beep(freq, 150)
+    #     winsound.Beep(freq, 150)
+    #     winsound.Beep(int(freq * (2) ** (12 / 12)), 900)
+    # def sound2():
+    #     freq = 420
+    #     winsound.Beep(freq, 400)
+    #     winsound.Beep(int(freq * (2) ** (4 / 12)), 150)
+    #     winsound.Beep(int(freq * (2) ** (7 / 12)), 150)
+    #     winsound.Beep(int(freq * (2) ** (12 / 12)), 450)
+    #     winsound.Beep(int(freq * (2) ** (11 / 12)), 150)
+    #     winsound.Beep(int(freq * (2) ** (12 / 12)), 900)
+    # def sound3():
+    #     freq = 420
+    #     winsound.Beep(freq, 500)
+    #     winsound.Beep(int(freq / (2) ** (5 / 12)), 600)
+
 
 
 # Function to calculate the Probability 
@@ -98,7 +125,7 @@ file.close()
 
 ############### GUI #############################
 
-listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu')
+listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur')
 
 window = tk.Tk()
 
