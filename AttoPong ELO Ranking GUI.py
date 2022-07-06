@@ -27,13 +27,20 @@ except:
 ######################################
 
 ########## DEFINE FUNCTIONS ##########
+if np.logical_or(platform == 'win64',platform == 'win32'):
+    def makeSound(platform,freq,duration):
+        winsound.Beep(freq, duration)
+elif platform == 'linux':
+    def makeSound(platform,freq,duration):
+        os.system('beep -f %s -l %s' % (freq,duration))
+
 
 # Functions to make sounds
-def makeSound(platform,freq,duration):
-    if np.logical_or(platform == 'win64',platform == 'win32'):
-        winsound.Beep(freq, duration)
-    elif platform == 'linux':
-        os.system('beep -f %s -l %s' % (freq,duration))
+# def makeSound(platform,freq,duration):
+#     if np.logical_or(platform == 'win64',platform == 'win32'):
+#         winsound.Beep(freq, duration)
+#     elif platform == 'linux':
+#         os.system('beep -f %s -l %s' % (freq,duration))
 # Functions to make sounds
 def sound1():
     freq = 420
