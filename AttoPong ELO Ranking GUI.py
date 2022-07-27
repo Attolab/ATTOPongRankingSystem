@@ -132,7 +132,7 @@ file.close()
 
 ############### GUI #############################
 
-listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur')
+listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur', 'Thomas')
 
 window = tk.Tk()
 
@@ -220,13 +220,13 @@ def update_ranking():
 
         # Make sounds
         sortedAttopong = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
-        for i in range(len(listPlayers)):
-            if (sortedAttopong[i][0]) != (sortedAttopong_old[i][0]):
-                makesound += 1
-        if makesound == 0:
-            sound1()
-        else:
-            sound2()
+        # for i in range(len(listPlayers)):
+            # if (sortedAttopong[i][0]) != (sortedAttopong_old[i][0]):
+                # makesound += 1
+        # if makesound == 0:
+            # sound1()
+        # else:
+            # sound2()
 
         # Update whiteboard display
         updateWhiteboard(window,sortedAttopong)
