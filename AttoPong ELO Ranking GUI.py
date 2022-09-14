@@ -133,6 +133,7 @@ file.close()
 ############### GUI #############################
 
 listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur', 'Thomas')
+activePlayersBool = (True, True, False, False, True, True, True, False, False, True, False, False)
 
 window = tk.Tk()
 
@@ -220,6 +221,8 @@ def update_ranking():
 
         # Make sounds
         sortedAttopong = sorted(Attopong.items(), key=lambda x: x[1], reverse=True)
+        seq = [score for (name, score) in Attopong.items()]
+        sortedIndices = [i for (v, i) in sorted(((v, i) for (i, v) in enumerate(seq)), reverse=True)]
         # for i in range(len(listPlayers)):
             # if (sortedAttopong[i][0]) != (sortedAttopong_old[i][0]):
                 # makesound += 1
@@ -240,6 +243,12 @@ def update_ranking():
             messagebox.showinfo('Rankings Updated!',
                                 P2[0] + ' took ' + str(abs(elo_modification)) + ' points from ' + P1[
                                     0] + '!' )
+
+        #File with sorted rankings with active players only
+        with open('Standings.txt', 'w') as f:
+            for index, players in enumerate(sortedAttopong):
+                if activePlayersBool[sortedIndices[index]]: #Only write if active
+                    f.write(str(players)+'\n')
 
 
 btn = tk.Button(window, text="Update", command=update_ranking)

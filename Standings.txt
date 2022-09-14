@@ -1,0 +1,6 @@
+('David', 1297.0)
+('Romain', 1079.0)
+('Thierry', 1054.0)
+('Martin', 1036.0)
+('Matthieu', 946.0)
+('Constant', 936.0)
