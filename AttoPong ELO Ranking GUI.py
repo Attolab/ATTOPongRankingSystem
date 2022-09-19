@@ -132,8 +132,8 @@ file.close()
 
 ############### GUI #############################
 
-listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur', 'Thomas')
-activePlayersBool = (True, True, False, False, True, True, True, False, False, True, False, False)
+listPlayers = ('David', 'Martin', 'Mauro', 'Mekha', 'Romain', 'Thierry', 'Constant', 'Lucie', 'Hugo', 'Matthieu', 'Arthur', 'Thomas', 'Jan')
+activePlayersBool = (True, True, False, False, True, True, True, False, False, True, False, False, True)
 
 window = tk.Tk()
 

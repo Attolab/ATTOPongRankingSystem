@@ -216,3 +216,12 @@ Date	Player1	Player2	Score1	Score2
 13/09/2022	David	Romain	11	7
 13/09/2022	Romain	David	11	7
 14/09/2022	David	Martin	11	2
+17/09/2022	Romain	David	11	9
+17/09/2022	David	Romain	11	8
+17/09/2022	David	Romain	11	5
+18/09/2022	David	Romain	12	10
+18/09/2022	Romain	Constant	11	9
+18/09/2022	David	Jan	11	1
+18/09/2022	David	Romain	11	8
+19/09/2022	Romain	Jan	11	5
+19/09/2022	David	Matthieu	11	0
