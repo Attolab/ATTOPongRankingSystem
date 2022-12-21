@@ -281,3 +281,7 @@ Date	Player1	Player2	Score1	Score2
 08/12/2022	David	Thierry	11	8
 08/12/2022	Romain	David	11	6
 08/12/2022	David	Romain	11	7
+21/12/2022	Romain	David	13	11
+21/12/2022	Romain	David	11	9
+21/12/2022	Romain	David	11	5
+21/12/2022	David	Romain	11	9

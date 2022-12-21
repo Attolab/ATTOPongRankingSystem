@@ -1,5 +1,5 @@
-('David', 1322.0)
-('Romain', 1168.0)
+('Romain', 1257.0)
+('David', 1233.0)
 ('Thierry', 1160.0)
 ('Martin', 1070.0)
 ('RomainC', 1043.0)
