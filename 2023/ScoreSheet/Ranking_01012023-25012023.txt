@@ -1,0 +1,2 @@
+{'Time': '01/01/2023', 'David': 1000, 'Martin': 1000, 'Mauro': 1000, 'Romain': 1000, 'Thierry': 1000, 'Constant': 1000, 'Matthieu': 1000, 'Titouan': 1000.0, 'RomainC': 1000.0}
+{'Time': '25/01/2023', 'David': 960.0, 'Martin': 1000, 'Mauro': 1000, 'Romain': 1040.0, 'Thierry': 1000, 'Constant': 1000, 'Matthieu': 1000, 'Titouan': 1000.0, 'RomainC': 1000.0}
