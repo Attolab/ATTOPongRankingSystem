@@ -27,3 +27,17 @@
 {'Time': '25/01/2023', 'David': 1047.0, 'Martin': 1000, 'Mauro': 1000, 'RomainG': 1007.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
 {'Time': '25/01/2023', 'David': 1001.0, 'Martin': 1000, 'Mauro': 1000, 'RomainG': 1053.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
 {'Time': '25/01/2023', 'David': 973.0, 'Martin': 1000, 'Mauro': 1028.0, 'RomainG': 1053.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1031.0, 'Martin': 1000, 'Mauro': 1028.0, 'RomainG': 995.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1079.0, 'Martin': 1000, 'Mauro': 980.0, 'RomainG': 995.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1079.0, 'Martin': 1000, 'Mauro': 1017.0, 'RomainG': 958.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1039.0, 'Martin': 1000, 'Mauro': 1017.0, 'RomainG': 998.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1084.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 998.0, 'Thierry': 1027.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1084.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 973.0, 'Thierry': 1052.0, 'Constant': 919.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1011.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 973.0, 'Thierry': 1052.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1043.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 973.0, 'Thierry': 1020.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1068.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 973.0, 'Thierry': 995.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1104.0, 'Martin': 1000, 'Mauro': 972.0, 'RomainG': 937.0, 'Thierry': 995.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1128.0, 'Martin': 1000, 'Mauro': 948.0, 'RomainG': 937.0, 'Thierry': 995.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1081.0, 'Martin': 1000, 'Mauro': 948.0, 'RomainG': 984.0, 'Thierry': 995.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1106.0, 'Martin': 1000, 'Mauro': 948.0, 'RomainG': 984.0, 'Thierry': 970.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
+{'Time': '02/02/2023', 'David': 1106.0, 'Martin': 1000, 'Mauro': 924.0, 'RomainG': 1008.0, 'Thierry': 970.0, 'Constant': 992.0, 'Matthieu': 1045.0, 'Titouan': 1000, 'RomainC': 955.0}
