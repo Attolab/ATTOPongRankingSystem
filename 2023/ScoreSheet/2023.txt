@@ -41,3 +41,11 @@ Date	Player1	Player2	Score1	Score2
 02/02/2023	RomainG	David	13	11
 02/02/2023	David	Thierry	11	8
 02/02/2023	RomainG	Mauro	11	9
+08/02/2023	David	Constant	11	3
+08/02/2023	Constant	Gabriele	11	9
+08/02/2023	RomainG	Thierry	11	4
+08/02/2023	RomainG	David	11	6
+08/02/2023	RomainG	RomainC	11	6
+08/02/2023	David	Thierry	11	5
+08/02/2023	Rafael	Gabriele	11	7
+08/02/2023	David	RomainG	12	10
