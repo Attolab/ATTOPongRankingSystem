@@ -174,3 +174,16 @@ Date	Player1	Player2	Score1	Score2
 10/07/2023	David	RomainG	11	8
 10/07/2023	RomainG	David	11	7
 10/07/2023	RomainG	David	11	7
+25/07/2023	David	Constant	11	6
+25/07/2023	RomainG	David	11	6
+25/07/2023	RomainG	David	11	8
+25/07/2023	David	Thierry	11	8
+25/07/2023	RomainG	David	12	10
+25/07/2023	David	RomainG	11	5
+25/07/2023	David	RomainG	12	10
+25/07/2023	David	Constant	11	8
+25/07/2023	David	RomainG	11	6
+25/07/2023	David	RomainG	11	9
+25/07/2023	RomainG	David	11	6
+25/07/2023	RomainG	David	11	9
+25/07/2023	RomainG	David	11	4
