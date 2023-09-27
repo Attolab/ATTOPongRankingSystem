@@ -209,3 +209,15 @@ Date	Player1	Player2	Score1	Score2
 12/09/2023	David	Thierry	11	9
 12/09/2023	RomainG	David	11	7
 12/09/2023	RomainG	David	11	6
+27/09/2023	RomainG	David	11	6
+27/09/2023	David	RomainG	11	8
+27/09/2023	RomainG	David	11	8
+27/09/2023	Thierry	David	11	9
+27/09/2023	David	RomainG	11	8
+27/09/2023	Thierry	David	11	9
+27/09/2023	RomainG	David	13	11
+27/09/2023	RomainG	David	11	7
+27/09/2023	Thierry	RomainG	16	14
+27/09/2023	David	Thierry	11	9
+27/09/2023	Thierry	RomainG	11	7
+27/09/2023	Thierry	RomainG	13	11
