@@ -1,0 +1,12 @@
+Date	Player1	Player2	Score1	Score2
+12/10/2023	Mauro	Thierry	14	12
+12/10/2023	Nicolas	Pierre	11	9
+12/10/2023	RomainG	Thierry	11	7
+12/10/2023	David	Mauro	11	5
+12/10/2023	David	Mauro	11	9
+12/10/2023	David	RomainG	12	10
+12/10/2023	Thierry	RomainG	11	6
+12/10/2023	David	Thierry	11	9
+12/10/2023	RomainG	David	12	10
+12/10/2023	RomainG	Thierry	12	7
+12/10/2023	Thierry	David	11	8
