@@ -54,3 +54,14 @@ Date	Player1	Player2	Score1	Score2
 28/11/2023	David	Pierre	11	3
 28/11/2023	David	RomainG	11	8
 28/11/2023	RomainG	David	11	5
+03/01/2024	RomainG	David	11	9
+03/01/2024	David	RomainG	11	7
+03/01/2024	Constant	Simon	11	6
+03/01/2024	RomainG	David	13	11
+03/01/2024	David	Pierre	11	6
+03/01/2024	David	RomainG	11	7
+03/01/2024	RomainG	David	11	8
+03/01/2024	David	Mauro	11	7
+03/01/2024	RomainG	Mauro	11	7
+03/01/2024	Mauro	RomainG	11	8
+03/01/2024	RomainG	RomainC	11	4
