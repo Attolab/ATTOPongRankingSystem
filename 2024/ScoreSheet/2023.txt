@@ -87,3 +87,4 @@ Date	Player1	Player2	Score1	Score2
 09/04/2024	David	Mauro	11	1
 09/04/2024	David	Pierre	11	3
 09/04/2024	RomainG	David	12	10
+10/04/2024	RomainG	David	11	7
