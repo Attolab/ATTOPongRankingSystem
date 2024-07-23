@@ -272,7 +272,9 @@ def plot_history():
             ranking_history[entry] = [d[entry] for d in data_dict]
 
     for player in ranking_history:
-        plt.plot(np.asarray(ranking_history[player]), label=str(player))
+        history = np.asarray(ranking_history[player])
+        if not np.all(np.isclose(history, 1000.0)):
+            plt.plot(history, label=str(player))
 
     plt.legend()
     plt.show()
