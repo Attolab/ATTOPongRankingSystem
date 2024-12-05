@@ -103,3 +103,16 @@ Date	Player1	Player2	Score1	Score2
 26/11/2024	David	Pierre	11	7
 26/11/2024	RomainG	Thierry	14	12
 26/11/2024	RomainG	David	11	6
+05/12/2024	RomainG	Thierry	11	2
+05/12/2024	NicolasG	Pierre	11	5
+05/12/2024	RomainG	David	11	7
+05/12/2024	Thierry	Pierre	11	3
+05/12/2024	David	RomainG	12	10
+05/12/2024	David	RomainG	11	9
+05/12/2024	Pierre	Nicolas	11	7
+05/12/2024	RomainG	David	12	10
+05/12/2024	RomainG	Thierry	12	10
+05/12/2024	David	Pierre	11	5
+05/12/2024	David	RomainG	11	9
+05/12/2024	David	Hussein	12	10
+05/12/2024	RomainG	David	12	10
